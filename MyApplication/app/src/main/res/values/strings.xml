@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">ToDoList</string>
+    <string name="finish">Finish</string>
+    <string name="date">Date</string>
+    <string name="content">Content</string>
+    <string name="title">Title</string>
+    <string name="save">SAVE</string>
+    <string name="delete">Delete</string>
+    <string-array name="category">
+        <item>To Do</item>
+        <item>Done</item>
+    </string-array>
 </resources>

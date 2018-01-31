@@ -33,9 +33,26 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.2"
+        android:text="@string/finish"
+        android:textSize="20sp"
+        android:onClick="finishButtonClick"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
         android:text="@string/save"
         android:textSize="20sp"
         android:onClick="saveButtonClick"
         />
-
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        android:text="@string/delete"
+        android:textSize="20sp"
+        android:onClick="deleteButtonClick"
+        android:backgroundTint="@android:color/holo_red_dark"
+        android:textColor="@android:color/white"
+        />
 </LinearLayout>

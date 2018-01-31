@@ -54,9 +54,10 @@ public class EditField extends AppCompatActivity {
     public void saveButtonClick(View v) {
         String messageText = ((EditText)findViewById(R.id.title)).getText().toString();
         String contentText = ((EditText)findViewById(R.id.content)).getText().toString();
-        if (messageText.equals("") || contentText.equals("")) {
+        String dateText = ((TextView)findViewById(R.id.date)).getText().toString();
+        if (messageText.equals("") || contentText.equals("") || dateText.equals("")) {
             Toast toast= Toast.makeText(getApplicationContext(),
-                    "The task can't be empty !", Toast.LENGTH_SHORT);
+                    "Missing info !", Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.CENTER_VERTICAL| Gravity.CENTER_HORIZONTAL, 0, 0);
             toast.show();
         } else {

@@ -2,19 +2,17 @@ package com.example.antoine.myapplication;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 import java.util.Calendar;
 
-public class EditTask extends AppCompatActivity {
+public class EditTaskDone extends AppCompatActivity {
     private String messageText;
     private String contentText;
     private String dateText;
@@ -26,7 +24,7 @@ public class EditTask extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.to_do_edit_layout);
+        setContentView(R.layout.to_do_edit_done_layout);
         Intent intent = getIntent();
         contentText = intent.getStringExtra(IntentCodes.INTENT_CONTENT_DATA);
         messageText = intent.getStringExtra(IntentCodes.INTENT_MESSAGE_DATA);
@@ -46,7 +44,7 @@ public class EditTask extends AppCompatActivity {
                 int year = cal.get(Calendar.YEAR);
                 int month = cal.get(Calendar.MONTH);
                 int day = cal.get(Calendar.DAY_OF_MONTH);
-                DatePickerDialog dialog = new DatePickerDialog(EditTask.this,
+                DatePickerDialog dialog = new DatePickerDialog(EditTaskDone.this,
                         R.style.Theme_AppCompat_DayNight_Dialog_MinWidth,
                         mDateSetListener,
                         year, month, day);
@@ -64,31 +62,6 @@ public class EditTask extends AppCompatActivity {
         };
     }
 
-    public void saveButtonClick(View v) {
-        String changedMessageText = ((EditText)findViewById(R.id.title)).getText().toString();
-        String changedContentText = ((EditText)findViewById(R.id.content)).getText().toString();
-        String changedDateText = ((TextView)findViewById(R.id.date)).getText().toString();
-        Intent intent = new Intent();
-        intent.putExtra(IntentCodes.INTENT_CHANGED_MESSAGE, changedMessageText);
-        intent.putExtra(IntentCodes.INTENT_CHANGED_CONTENT, changedContentText);
-        intent.putExtra(IntentCodes.INTENT_CHANGED_DATE, changedDateText);
-        intent.putExtra(IntentCodes.INTENT_ITEM_POSITION, position);
-        setResult(IntentCodes.INTENT_RESULT_CODE_TWO, intent);
-        finish();
-    }
-
-    public void finishButtonClick(View v) {
-        String changedMessageText = ((EditText)findViewById(R.id.title)).getText().toString();
-        String changedContentText = ((EditText)findViewById(R.id.content)).getText().toString();
-        String changedDateText = ((TextView)findViewById(R.id.date)).getText().toString();
-        Intent intent = new Intent();
-        intent.putExtra(IntentCodes.INTENT_CHANGED_MESSAGE, changedMessageText);
-        intent.putExtra(IntentCodes.INTENT_CHANGED_CONTENT, changedContentText);
-        intent.putExtra(IntentCodes.INTENT_CHANGED_DATE, changedDateText);
-        intent.putExtra(IntentCodes.INTENT_ITEM_POSITION, position);
-        setResult(IntentCodes.INTENT_RESULT_CODE_THREE, intent);
-        finish();
-    }
     public void deleteButtonClick(View v) {
         String changedMessageText = ((EditText)findViewById(R.id.title)).getText().toString();
         String changedContentText = ((EditText)findViewById(R.id.content)).getText().toString();
@@ -98,7 +71,7 @@ public class EditTask extends AppCompatActivity {
         intent.putExtra(IntentCodes.INTENT_CHANGED_CONTENT, changedContentText);
         intent.putExtra(IntentCodes.INTENT_CHANGED_DATE, changedDateText);
         intent.putExtra(IntentCodes.INTENT_ITEM_POSITION, position);
-        setResult(IntentCodes.INTENT_RESULT_CODE_FOUR, intent);
+        setResult(IntentCodes.INTENT_RESULT_CODE_FIVE, intent);
         finish();
     }
 }
